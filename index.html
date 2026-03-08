@@ -1,10 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>real cat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yif · loop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            min-height: 100vh;
+            font-family: 'Arial Black', 'Helvetica Black', Impact, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* YIF LOOP BACKGROUND */
+        .yif-loop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 0;
+            background: #000;
+            z-index: 1;
+        }
+
+        .yif-item {
+            color: #111;
+            font-size: 4vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+            mix-blend-mode: screen;
+            animation: subtlePulse 3s infinite alternate;
+            text-shadow: 0 0 5px #00ffaa20;
+            letter-spacing: -2px;
+        }
+
+        /* different colors for variety like the reference */
+        .yif-item:nth-child(odd) {
+            color: #0a1f1a;
+        }
+        .yif-item:nth-child(3n) {
+            color: #1a2f2a;
+        }
+        .yif-item:nth-child(5n+2) {
+            color: #0c2e22;
+        }
+
+        @keyframes subtlePulse {
+            0% { opacity: 0.7; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.02); }
+        }
+
+        /* IMAGE LAYER - FLOATING IN MIDDLE */
+        .image-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            pointer-events: none; /* so clicks pass through to nothing */
+        }
+
+        .center-image {
+            max-width: min(500px, 70vw);
+            max-height: min(500px, 70vh);
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            box-shadow: 0 0 40px rgba(0, 255, 200, 0.4),
+                        0 0 20px rgba(0, 200, 255, 0.6),
+                        0 0 0 4px #00ffcc,
+                        0 0 0 8px rgba(0, 50, 30, 0.8);
+            object-fit: cover;
+            background: #132b22; /* fallback */
+            image-rendering: crisp-edges;
+            filter: contrast(1.1) brightness(1.1);
+            transition: all 0.2s;
+            border: 2px solid #aaffdd;
+        }
+
+        /* optional: small instruction overlay (but barely visible) */
+        .hint {
+            position: fixed;
+            bottom: 15px;
+            right: 20px;
+            color: #00aa88;
+            font-family: monospace;
+            font-size: 12px;
+            opacity: 0.3;
+            z-index: 100;
+            background: #00000080;
+            padding: 4px 8px;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .hint a {
+            color: #88ffcc;
+            text-decoration: none;
+        }
+
+        /* make it responsive — grid adjusts */
+        @media (max-width: 700px) {
+            .yif-loop {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .yif-item {
+                font-size: 8vw;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>real cat</h1>
-<p>real cat</p>
+    <!-- BACKGROUND LOOP: yif repeated everywhere -->
+    <div class="yif-loop">
+        <!-- generate 64 yif items (8x8 grid) -->
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+        <div class="yif-item">yif</div>
+    </div>
+
+    <!-- IMAGE ON HIGHER LAYER - MIDDLE OF SCREEN -->
+    <div class="image-layer">
+        <!-- 
+            TO ADD YOUR OWN IMAGE:
+            1. Upload an image (e.g., "my-pic.jpg" or "yif-central.png") to the same folder as this HTML file
+            2. Change src="..." to src="your-image.jpg"
+            3. Commit & push to GitHub
+        -->
+        <img class="center-image" 
+             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231b3e32'/%3E%3Ccircle cx='50' cy='50' r='35' fill='%2322cc99'/%3E%3Ctext x='50' y='68' font-size='34' text-anchor='middle' fill='%23000' font-family='monospace' font-weight='bold' dy='.3em'%3Eyif%3C/text%3E%3C/svg%3E"
+             alt="yif central image — replace with your own">
+    </div>
+
+    <!-- tiny hint (barely visible, but helpful for setup) -->
+    <div class="hint">
+        ⚡ upload image to repo → rename src="your-image.jpg"
+    </div>
 </body>
 </html>
